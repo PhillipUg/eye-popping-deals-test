@@ -37,7 +37,7 @@ const run = async () => {
     page.waitForNavigation({ waitUntil: 'networkidle0' })
   ])
   console.log('fetching promo codes....')
-  const items = await scrapeInfiniteScrollItems(page, extractItems, 5);
+  const items = await scrapeInfiniteScrollItems(page, extractItems, 100);
 
   console.log({promo_codes: items, total: items.length})
   await browser.close()
